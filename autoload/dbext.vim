@@ -2940,7 +2940,8 @@ function! s:DB_ORA_execSql(str)
                 \ ' ' . dbext#DB_getWType("cmd_options") .
                 \ s:DB_option(' "', s:DB_get("user"), '') .
                 \ s:DB_option('/', s:DB_get("passwd"), '') .
-                \ s:DB_option('@', s:DB_get("srvname"), '') .
+                \ s:DB_option('@', s:DB_get("host"), '') .
+                \ s:DB_option('/', s:DB_get("dbname"), '') .
                 \ s:DB_option(' ', dbext#DB_getWTypeDefault("extra"), '') .
                 \ '" @' . s:dbext_tempfile
     let result = s:DB_runCmd(cmd, output, "")
